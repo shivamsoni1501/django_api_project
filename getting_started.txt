@@ -1,0 +1,42 @@
+// Only works with >=python3
+// start env with env\Scripts\activate
+// end env with env\Scripts\deactivate
+
+# install Django
+    - python -m pip install Django
+
+# create new project
+    - django-admin startproject project_name
+
+# create new app in the project
+    - python manage.py startapp app1
+
+# about app structure
+    // create files if not exits
+    - templates/app1 contains all html pages like index.html
+
+    - views contains the functions which will call for perticular routes
+        -- create a new functions
+            def view1(request):
+                return render(request, 'app1/index.html',)
+
+    - urls contains the urls maps of functions defined in views
+        -- create new variable
+            urlpatterns = [
+                path('view1/', views.view1)      // looks for => 'domain.com/view1/'
+            ]
+
+# about project structure
+    - need to define urls created in apps structure
+        -- append in urlpatterns list:
+            path( '', include('app1.urls') )
+
+# stating django server
+    - python manage.py runserver
+
+
+
+
+
+
+

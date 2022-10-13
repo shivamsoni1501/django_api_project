@@ -13,5 +13,12 @@
     <p>
         My name is Shivam
     </p>
+    {% for item in content %}
+        <ol>
+            <li> {{item.title}} </li>
+            <li> {{item.body }} </li>
+        </ol>
+    {% endfor %}
+
 </body>
 </html>
